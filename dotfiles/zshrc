@@ -1,0 +1,22 @@
+export AUR_DIR=$HOME/Repositories/.aur
+export ZSH_PLUGINS_DIR=/usr/share/zsh/plugins
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+prompt pure
+
+plugins=(git docker docker-compose)
+
+source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zstyle ':completion:*:ssh:*' hosts off
+
+function wireguard () {
+	sudo wg-quick $1 /etc/wireguard/wg0.conf
+}
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias activate="source ./.venv/bin/activate"
