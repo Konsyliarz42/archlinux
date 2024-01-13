@@ -4,5 +4,5 @@ set -e
 echo "- Installation"
 sudo pacman -Syu --noconfirm openssh
 
-echo "- Enable daemon"
+echo "- Enable Daemon"
 sudo systemctl enable --now sshd

@@ -25,7 +25,7 @@ cd $CURRENT_DIR
 echo "- Enable Daemon"
 sudo systemctl enable --now iwd
 
-echo "- Connect to wi-fi"
+echo "- Connect To Wi-Fi"
 iwctl device list
 read -p "Select device: " device
 iwctl device $device set-property Powered on

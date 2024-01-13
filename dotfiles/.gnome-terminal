@@ -1,0 +1,18 @@
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(38,50,56)'
+bold-color='rgb(176,190,197)'
+bold-color-same-as-fg=false
+cursor-background-color='rgb(69,90,100)'
+cursor-colors-set=true
+cursor-foreground-color='rgb(176,190,197)'
+default-size-columns=120
+default-size-rows=30
+font='Source Code Pro 12'
+foreground-color='rgb(236,239,241)'
+highlight-background-color='rgb(69,90,100)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(176,190,197)'
+palette=['rgb(158,158,158)', 'rgb(229,115,115)', 'rgb(174,213,129)', 'rgb(255,213,79)', 'rgb(100,181,246)', 'rgb(186,104,200)', 'rgb(77,208,225)', 'rgb(250,250,250)', 'rgb(97,97,97)', 'rgb(244,67,54)', 'rgb(139,195,74)', 'rgb(255,193,7)', 'rgb(33,150,243)', 'rgb(156,39,176)', 'rgb(0,188,212)', 'rgb(238,238,238)']
+use-system-font=false
+use-theme-colors=false
+visible-name='Default'

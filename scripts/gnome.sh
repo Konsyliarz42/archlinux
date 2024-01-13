@@ -3,51 +3,37 @@ set -e
 
 AUR_DIR=$HOME/Repositories/.aur
 CURRENT_DIR=$(pwd)
+DOTFILES_DIR=$(dirname "$0")/../dotfiles
 
 echo "- Installation Dependencies"
 sudo pacman -Syu --noconfirm \
-    git \
+    dconf \
     gdm \
+    git \
+    gnome-browser-connector \
     gnome-control-center \
+    gnome-disk-utility \
+    gnome-firmware \
     gnome-font-viewer \
     gnome-keyring \
     gnome-menus \
     gnome-session \
     gnome-settings-daemon \
     gnome-shell \
-    gnome-browser-connector \
-    gnome-tweaks \
     gnome-terminal \
+    gnome-tweaks \
     nautilus \
-    gnome-firmware \
     networkmanager \
-    xorg \
+    xdg-user-dirs \
+    xdg-user-dirs-gtk
 
 echo "- Installation AUR Packages:"
 mkdir -p $AUR_DIR
 cd $AUR_DIR
 
-echo "  - UTC clock"
-git clone https://aur.archlinux.org/gnome-shell-extension-utc-clock.git
-cd gnome-shell-extension-utc-clock
-makepkg -si --noconfirm
-cd $AUR_DIR
-
-echo "  - Blur my Shell"
-git clone https://aur.archlinux.org/gnome-shell-extension-blur-my-shell.git
-cd gnome-shell-extension-blur-my-shell
-makepkg -si --noconfirm
-cd $AUR_DIR
-
 echo "  - Alphabetical App Grid"
 git clone https://aur.archlinux.org/gnome-shell-extension-alphabetical-grid-extension.git
 cd gnome-shell-extension-alphabetical-grid-extension
-makepkg -si --noconfirm
-# cd $AUR_DIR
-
-echo "  - Unblank"
-git clone https://aur.archlinux.org/gnome-shell-extension-unblank-git.git
-cd gnome-shell-extension-unblank-git
 makepkg -si --noconfirm
 cd $AUR_DIR
 
@@ -64,6 +50,9 @@ makepkg -si --noconfirm
 cd $AUR_DIR
 
 cd $CURRENT_DIR
+
+echo "- Load Terminal Configuartion"
+cat $DOTFILES_DIR/.gnome-terminal | dconf load /org/gnome/terminal/legacy/profiles:/
 
 echo "- Enable daemon"
 sudo systemctl enable gdm

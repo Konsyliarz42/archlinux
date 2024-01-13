@@ -11,14 +11,11 @@ sudo pacman -Syu --noconfirm \
     zsh-syntax-highlighting \
     zsh-autosuggestions
 
+echo "- Instalation Oh My Zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "- Installation AUR Packages:"
 mkdir -p $AUR_DIR
-cd $AUR_DIR
-
-echo "  - Oh My Zsh"
-git clone https://aur.archlinux.org/oh-my-zsh-git.git
-cd oh-my-zsh-git
-makepkg -si --noconfirm
 cd $AUR_DIR
 
 echo "  - Pure"

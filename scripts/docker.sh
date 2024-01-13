@@ -4,9 +4,9 @@ set -e
 echo "- Installation"
 sudo pacman -Syu --noconfirm docker docker-compose
 
-echo "- Add user to group"
+echo "- Add User To Group"
 sudo usermod -aG docker $USER
 newgrp docker
 
-echo "- Enable daemon"
+echo "- Enable Daemon"
 sudo systemctl enable --now docker
