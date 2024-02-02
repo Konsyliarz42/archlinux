@@ -15,3 +15,6 @@ echo "Install VSCode" && $SCRIPTS_DIR/vscode.sh
 
 echo "Fix clock sync"
 timedatectl set-local-rtc 1 --adjust-system-clock
+
+echo "Install package for NTFS"
+sudo pacman -Syu --noconfirm ntfs-3g
